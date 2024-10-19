@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="estiloCarrito.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carrito de Compras</h1>
+        
+        <form id="formProducto">
+            <label for="nombreProducto">Nombre del Producto:</label>
+            <input type="text" id="nombreProducto" class="input-text" required>
+
+            <label for="precioProducto">Precio del Producto (S/.):</label>
+            <input type="number" id="precioProducto" class="input-text" required>
+
+            <div class="button-group">
+                <button type="button" id="agregarProductoBtn" onclick="agregarProducto()">Agregar Producto</button>
+                <button type="reset" id="resetBtn">Resetear Formulario</button>
+                <button type="button" id="eliminarProductoBtn" onclick="eliminarProducto()">Eliminar Producto</button>
+            </div>
+        </form>
+
+        <div id="resultado">
+            <h2>Resumen de Carrito</h2>
+            <div id="carrito"></div>
+        </div>
+    </div>
+    <script src="javascript/carrito-compra.js"></script>
+</body>
+</html>

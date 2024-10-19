@@ -1,96 +1,3 @@
-// //Clase Producto
-// class Producto {
-//     constructor(nombre, precio) {
-//         this.nombre = nombre;
-//         this.precio = precio;
-//     }
-// }
-
-// //Clase CarritoDeCompras
-// class CarritoDeCompras {
-//     constructor() {
-//         this.productos = [];
-//         this.IGV = 0.18; // El IGV
-//         this.descuentoPorcentaje = 0.10; // El descuento
-//         this.limiteDescuento = 3000; // El valor "top" o límite para el descuento
-//     }
-
-//     agregarProducto(producto) {
-//         this.productos.push(producto);
-//         document.write(`"${producto.nombre}" ha sido agregado al carrito<br>`);
-//     }
-
-//     eliminarProducto(nombreProducto) {
-//         const index = this.productos.findIndex(prod => prod.nombre === nombreProducto);
-//         if (index !== -1) {
-//             this.productos.splice(index, 1);
-//             document.write(`"${nombreProducto}" ha sido eliminado del carrito<br>`);
-//         } else {
-//             document.write(`${nombreProducto} no se encontró en el carrito`);
-//         }
-//     }
-
-//     calcularSubtotal1() {
-//         const subtotal1 = this.productos.reduce((acc, prod) => acc + prod.precio, 0);
-//         return subtotal1;
-//     }
-
-//     calcularDescuento() {
-//         let descuento = 0;
-//         const subtotal = this.calcularSubtotal1();
-//         if (subtotal > this.limiteDescuento) {
-//             descuento = subtotal * this.descuentoPorcentaje;
-//         }
-//         return descuento;
-//     }
-
-//     calcularSubtotal2() {
-//         const subtotal2 = this.calcularSubtotal1() - this.calcularDescuento();
-//         return subtotal2;
-//     }
-
-//     calcularIGV() {
-//         const monto = this.calcularSubtotal2();
-//         const igv = monto * this.IGV;
-//         return igv;
-//     }
-
-//     calcularMontoTotal() {
-//         const total = this.calcularSubtotal2() + this.calcularIGV();
-//         return total;
-//     }
-
-//     mostrarCarrito() {
-//         if (this.productos.length === 0) {
-//             document.write('El carrito está vacío');
-//         } else {
-//             /*document.write('<br>Resumen de la compra:<br><br>');*/
-//             document.write('<br><strong>Productos en el carrito:</strong><br><br>');
-//             this.productos.forEach(prod => document.write(`- ${prod.nombre}: $${prod.precio}<br>`));
-//         }
-//     }
-// }
-
-// //Ejemplo de uso
-// const carrito = new CarritoDeCompras();
-
-// const producto1 = new Producto('Laptop', 5000);
-// const producto2 = new Producto('Mouse', 200);
-// const producto3 = new Producto('Teclado', 500);
-
-// document.write("<strong>Productos a agregar:</strong> <br><br>");
-// carrito.agregarProducto(producto1);
-// carrito.agregarProducto(producto2);
-// carrito.agregarProducto(producto3);
-// carrito.mostrarCarrito();
-
-// document.write("<br><strong>Detalle de facturación:</strong> <br><br>");
-// document.write(`<br><strong>Subtotal 1:</strong> S/. ${carrito.calcularSubtotal1().toFixed(2)}<br>`);
-// document.write(`<strong>Descuento aplicado:</strong> - S/. ${carrito.calcularDescuento().toFixed(2)}<br>`);
-// document.write(`<strong>Subtotal 2 (Subtotal 1 - Descuento):</strong> S/. ${carrito.calcularSubtotal2().toFixed(2)}<br>`);
-// document.write(`<strong>IGV aplicado (18% del Subtotal 2):</strong> S/. ${carrito.calcularIGV().toFixed(2)}<br>`);
-// document.write(`<br><strong>Total a pagar:</strong> S/. ${carrito.calcularMontoTotal().toFixed(2)}</strong><br>`);
-
 // Clase Producto
 class Producto {
     constructor(nombre, precio) {
@@ -165,9 +72,10 @@ class CarritoDeCompras {
     }
 }
 
-// Manejo del carrito de compras
+// Instancia del carrito de compras
 const carrito = new CarritoDeCompras();
 
+//Funciones para cada botón del formulario
 function agregarProducto() {
     const nombre = document.getElementById('nombreProducto').value;
     const precio = parseFloat(document.getElementById('precioProducto').value);
